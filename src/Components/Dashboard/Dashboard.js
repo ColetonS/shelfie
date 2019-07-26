@@ -7,10 +7,20 @@ export default class Dashboard extends Component {
     }
 
     render() {
+      const mappedInventory = this.props.inventory.map((el, i, arr) => {
+          return (
+            <Product
+                 name={el.name}
+                 price={el.price}
+                 imgurl={el.imgurl}
+            
+            
+            
+            />)
+      })
         return (
             <div>
-            Dashboard
-            <Product />
+            {mappedInventory}
             </div>
         )
     }
