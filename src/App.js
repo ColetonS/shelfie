@@ -14,6 +14,8 @@ class App extends Component {
       inventory: []
 
     }
+
+    this.componentDidMount = this.componentDidMount.bind(this)
   }
 
  componentDidMount() {
@@ -25,13 +27,21 @@ class App extends Component {
       })
     })
     .catch(err => alert(err))
+
+    // console.log('this.state.inventory:', this.state.inventory)
  }
+
 
   render() {
   return (
     <div className="App">
-      <Dashboard inventory={this.state.inventory} />
-      <Form />
+      <Dashboard 
+        inventory={this.state.inventory} 
+        
+        />
+      <Form
+        componentDidMount={this.componentDidMount}
+      />
       <Header />
     </div>
   );

@@ -7,6 +7,7 @@ const ctrl = require('./controller')
 app.use(express.json())
 
 app.get('/api/inventory', ctrl.getInventory)
+app.post('/api/product', ctrl.addProduct)
 
 const {SERVER_PORT, CONNECTION_STRING} = process.env
 

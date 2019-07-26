@@ -9,7 +9,7 @@ export default class Product extends Component {
         return (
             <div>
                 <h2>
-                    {this.props.name}
+                    {this.props.productName}
                 </h2>
                 <h2>
                     {this.props.price}

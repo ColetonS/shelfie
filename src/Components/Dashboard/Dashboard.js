@@ -10,18 +10,21 @@ export default class Dashboard extends Component {
       const mappedInventory = this.props.inventory.map((el, i, arr) => {
           return (
             <Product
-                 name={el.name}
+                 productName={el.product_name}
                  price={el.price}
                  img={el.img}
+                 key={el.id}
             
             
             
             />)
       })
+      console.log('mappedinventory:', mappedInventory)
         return (
             <div>
             {mappedInventory}
             </div>
         )
     }
+
 }
