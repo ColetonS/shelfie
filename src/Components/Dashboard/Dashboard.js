@@ -12,7 +12,7 @@ export default class Dashboard extends Component {
             <Product
                  name={el.name}
                  price={el.price}
-                 imgurl={el.imgurl}
+                 img={el.img}
             
             
             

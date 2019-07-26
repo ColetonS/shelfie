@@ -3,6 +3,7 @@ import './App.css';
 import Dashboard from './Components/Dashboard/Dashboard'
 import Form from './Components/Form/Form'
 import Header from './Components/Header/Header'
+import axios from 'axios'
 
 class App extends Component {
   constructor() {
@@ -10,22 +11,21 @@ class App extends Component {
 
     this.state = {
     
-      inventory: [
-        {
-          name: 'shoes',
-          price: 20,
-          imgurl: 'https://images.pexels.com/photos/19090/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-        },
-        {
-          name: 'pants',
-          price: 40,
-          imgurl: 'https://images.thenorthface.com/is/image/TheNorthFace/NF0A3BE3_ZBV_hero?$260x302$'
-        }
-      ]
+      inventory: []
 
     }
   }
 
+ componentDidMount() {
+   axios
+    .get('/api/inventory')
+    .then(res => {
+      this.setState({
+        inventory: res.data
+      })
+    })
+    .catch(err => alert(err))
+ }
 
   render() {
   return (

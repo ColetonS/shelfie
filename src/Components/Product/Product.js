@@ -8,9 +8,13 @@ export default class Product extends Component {
     render() {
         return (
             <div>
-                {this.props.name}
-                {this.props.price}
-                <img src={this.props.imgurl}/>
+                <h2>
+                    {this.props.name}
+                </h2>
+                <h2>
+                    {this.props.price}
+                </h2>
+                <img src={this.props.img}/>
             </div>
         )
     }
